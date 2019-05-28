@@ -24,8 +24,7 @@ label_3.pack()
 
 def plus():
     try:
-        num1 =float(first_number.get())
-        num2 = float(second_number.get())
+        num1,num2 =take_input()
         result = num1+num2
         result_display.config(text="Operation result is "+ str(result))
     except ValueError:
@@ -34,9 +33,7 @@ def plus():
 
 def sub():
     try:
-
-        num1 =float(first_number.get())
-        num2 = float(second_number.get())
+        num1, num2 = take_input()
         result = num1-num2
         result_display.config(text="Operation result is " + str(result))
     except ValueError:
@@ -45,9 +42,7 @@ def sub():
 
 def mul():
     try:
-
-        num1 =float(first_number.get())
-        num2 = float(second_number.get())
+        num1, num2 = take_input()
         result = round(num1*num2,10)
         result_display.config(text="Operation result is " + str(result))
     except ValueError:
@@ -56,14 +51,24 @@ def mul():
 
 def division():
     try:
-        num1 =float(first_number.get())
-        num2 = float(second_number.get())
+        num1, num2 = take_input()
         result = num1 / num2
         result_display.config(text="Operation result is " + str(result))
     except ZeroDivisionError :
         msgbox.showinfo('ERROR','Attempt to Divide by Zero')
     except ValueError :
         msgbox.showerror('INVALID INPUT','Enter Only Numeric value')
+
+def take_input():
+    n1 = first_number.get()
+    n2 = second_number.get()
+    try :
+        n1 =float(n1)
+        n2 =float(n2)
+        return(n1,n2)
+    except ValueError:
+        msgbox.showerror('INVALID INPUT','Enter Only Numeric Value')
+        quit(0)
 
 
 button_plus = tk.Button(mainWindow,text="  +  ",command = lambda : plus())
@@ -84,5 +89,10 @@ result_display.pack()
 
 
 mainWindow.mainloop()
+
+
+
+
+
 
 
