@@ -1,24 +1,6 @@
 import tkinter as tk
 
 
-# mainWindow = tk.Tk()
-# mainWindow.title =("Sample Window ")
-#
-# heading_label=tk.Label(mainWindow,text="Hello World ")
-# heading_label.pack()
-#
-# name_field = tk.Entry(mainWindow)
-# name_field.pack()
-#
-# def takeValueInput():
-#     name =name_field.get()
-#     print(name)
-#
-# button = tk.Button(mainWindow,text="Get Value",command = lambda : takeValueInput())
-# button.pack()
-#
-# mainWindow.mainloop()
-
 mainWindow = tk.Tk()
 mainWindow.title=("Calculator")
 
